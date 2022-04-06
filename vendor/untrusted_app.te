@@ -76,3 +76,18 @@ allow untrusted_app program_binary_service:service_manager find;
 
 # Purpose : Add permission for mtk radio service find from ServiceManager.
 allow untrusted_app mtk_radio_service:service_manager find;
+
+# allow to read and write vendor debug, mi camera props
+get_prop(untrusted_app, vendor_debug_prop)
+get_prop(untrusted_app, vendor_mi_camera_prop)
+
+# grant access to sysfs and vendor
+allow untrusted_app sysfs_bus:dir rw_dir_perms;
+allow untrusted_app sysfs_bus:file r_file_perms;
+allow untrusted_app sysfs_bus:lnk_file rw_file_perms;
+allow untrusted_app sysfs_class:dir r_dir_perms;
+allow untrusted_app sysfs_devices_block:dir r_dir_perms;
+allow untrusted_app sysfs_mmcblk:file r_file_perms;
+allow untrusted_app sysfs_class:lnk_file r_file_perms;
+allow untrusted_app vendor_file:file r_file_perms;
+allow untrusted_app sysfs:file r_file_perms;

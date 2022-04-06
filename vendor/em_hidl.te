@@ -88,3 +88,14 @@ set_prop(em_hidl, vendor_vt_prop)
 
 # Purpose : allow EM to set mtk_dmc_prop
 set_prop(em_hidl, mtk_dmc_prop);
+
+# allow to read service nvram init prop
+get_prop(em_hidl, service_nvram_init_prop)
+
+# allow to read dt firmware and cmdline
+allow em_hidl sysfs_dt_firmware_android:dir r_dir_perms;
+allow em_hidl proc_cmdline:file { getattr open };
+
+# MTK Engineering Mode
+get_prop(em_hidl, wmt_prop)
+allow em_hidl sysfs_dt_firmware_android:file r_file_perms;

@@ -13,3 +13,7 @@ allow volte_imsm_93 self:capability sys_admin;
 allow volte_imsm_93 volte_imsm_93:udp_socket rw_socket_perms;
 allow volte_imsm_93 volte_imsm_93:netlink_route_socket { nlmsg_write nlmsg_read create_socket_perms_no_ioctl };
 allow volte_imsm_93 volte_imsm_93:capability net_admin;
+
+get_prop(volte_imsm_93, system_prop)
+get_prop(volte_imsm_93, mtk_md_version_prop)
+get_prop(volte_imsm_93, service_nvram_init_prop)

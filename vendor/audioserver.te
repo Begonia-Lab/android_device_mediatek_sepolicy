@@ -59,3 +59,6 @@ allow audioserver adsp_device:chr_file { rw_file_perms };
 
 # Purpose : OpenDSP: read/write ipi message to tinysys
 allow audioserver audio_ipi_device:chr_file { read write ioctl open };
+
+# allow to read vendor default prop
+get_prop(audioserver, vendor_default_prop)

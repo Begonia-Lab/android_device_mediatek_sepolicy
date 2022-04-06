@@ -7,6 +7,7 @@ allow ipsec_mon self:netlink_xfrm_socket { write bind create read nlmsg_read nlm
 allow ipsec_mon ims_ipsec_data_file:file { read getattr write ioctl append };
 allow ipsec_mon init:unix_stream_socket connectto;
 allow ipsec_mon self:key_socket { write read create setopt };
+allow ipsec_mon ipsec_mon:netlink_route_socket { nlmsg_readpriv };
 
 # Purpose: ipsec_mon fulfill 3x solution
 allow ipsec_mon self:capability { net_admin net_raw };

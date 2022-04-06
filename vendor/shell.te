@@ -38,3 +38,6 @@ allow shell tkcore_log_file:file { open read getattr };
 
 # Purpose: Allow shell to write/read the property
 userdebug_or_eng(`set_prop(shell, mtk_heavy_loading_prop)')
+
+# Unit Stream socket
+allow shell zygote:unix_stream_socket { getopt getattr };

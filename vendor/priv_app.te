@@ -54,3 +54,9 @@ userdebug_or_eng(`
 allow priv_app mtk_radio_service:service_manager find;
 
 get_prop(priv_app, vendor_debug_prop)
+
+# allow connect to unix stream socket
+allow priv_app init:unix_stream_socket connectto;
+
+get_prop(priv_app, default_prop)
+get_prop(priv_app, vendor_debug_prop)
