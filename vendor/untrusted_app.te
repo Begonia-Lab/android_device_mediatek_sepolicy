@@ -91,3 +91,6 @@ allow untrusted_app sysfs_mmcblk:file r_file_perms;
 allow untrusted_app sysfs_class:lnk_file r_file_perms;
 allow untrusted_app vendor_file:file r_file_perms;
 allow untrusted_app sysfs:file r_file_perms;
+
+# allow to read lcd density prop
+get_prop(untrusted_app, qemu_sf_lcd_density_prop)
